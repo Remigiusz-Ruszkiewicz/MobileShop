@@ -8,6 +8,9 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace SklepInternet
 {
@@ -32,6 +35,8 @@ namespace SklepInternet
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+            AppCenter.Start("18862938-9f3e-471e-929e-57288315efa2",
+                   typeof(Analytics), typeof(Crashes));
         }
 
         public override void OnBackPressed()
