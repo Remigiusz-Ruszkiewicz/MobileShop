@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Android;
 using Android.App;
 using Android.OS;
@@ -51,7 +52,6 @@ namespace SklepInternet
                 base.OnBackPressed();
             }
         }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
@@ -68,12 +68,29 @@ namespace SklepInternet
 
             return base.OnOptionsItemSelected(item);
         }
+        private void Start()
+        {
+            SetContentView(Resource.Layout.activity_main);
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
 
+            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            fab.Click += FabOnClick;
+
+            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+            drawer.AddDrawerListener(toggle);
+            toggle.SyncState();
+
+            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView.SetNavigationItemSelectedListener(this);
+        }
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+            //View view = (View) sender;
+            //Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+            //    .SetAction("Powrót", (Android.Views.View.IOnClickListener)null).Show();
+            Start();
         }
 
         public bool OnNavigationItemSelected(IMenuItem item)
@@ -82,31 +99,109 @@ namespace SklepInternet
 
             if (id == Resource.Id.nav_camera)
             {
-                // Handle the camera action
+                SetContentView(Resource.Layout.activity_account);
+                Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                SetSupportActionBar(toolbar);
+
+                FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+                fab.Click += FabOnClick;
+
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+                drawer.AddDrawerListener(toggle);
+                toggle.SyncState();
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
             }
             else if (id == Resource.Id.nav_gallery)
             {
+                SetContentView(Resource.Layout.activity_account);
+                Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                SetSupportActionBar(toolbar);
 
+                FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+                fab.Click += FabOnClick;
+
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+                drawer.AddDrawerListener(toggle);
+                toggle.SyncState();
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
             }
             else if (id == Resource.Id.nav_slideshow)
             {
+                SetContentView(Resource.Layout.activity_account);
+                Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                SetSupportActionBar(toolbar);
 
+                FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+                fab.Click += FabOnClick;
+
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+                drawer.AddDrawerListener(toggle);
+                toggle.SyncState();
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
             }
             else if (id == Resource.Id.nav_manage)
             {
+                SetContentView(Resource.Layout.activity_account);
+                Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                SetSupportActionBar(toolbar);
 
+                FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+                fab.Click += FabOnClick;
+
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+                drawer.AddDrawerListener(toggle);
+                toggle.SyncState();
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
             }
             else if (id == Resource.Id.nav_share)
             {
+                SetContentView(Resource.Layout.activity_account);
+                Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                SetSupportActionBar(toolbar);
 
+                FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+                fab.Click += FabOnClick;
+
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+                drawer.AddDrawerListener(toggle);
+                toggle.SyncState();
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
             }
             else if (id == Resource.Id.nav_send)
             {
+                SetContentView(Resource.Layout.activity_account);
+                Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                SetSupportActionBar(toolbar);
 
+                FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+                fab.Click += FabOnClick;
+
+                DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+                drawer.AddDrawerListener(toggle);
+                toggle.SyncState();
+
+                NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+                navigationView.SetNavigationItemSelectedListener(this);
             }
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start);
+            DrawerLayout drawer1 = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawer1.CloseDrawer(GravityCompat.Start);
             return true;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
